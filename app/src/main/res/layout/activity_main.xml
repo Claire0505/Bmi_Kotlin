@@ -7,12 +7,64 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="8dp"
-        android:text="Hello World!"
+        android:layout_marginTop="16dp"
+        android:text="Weight"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/ed_Weight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Height"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintStart_toStartOf="@+id/ed_Weight"
+        app:layout_constraintTop_toBottomOf="@+id/ed_Weight" />
+
+    <EditText
+        android:id="@+id/ed_Height"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintStart_toStartOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <Button
+        android:id="@+id/btn_CalculateBmi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:onClick="calculateBmi"
+        android:text="Calculate BMI"
+        app:layout_constraintStart_toStartOf="@+id/ed_Height"
+        app:layout_constraintTop_toBottomOf="@+id/ed_Height" />
+
+    <Button
+        android:id="@+id/btn_help"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="Help"
+        app:layout_constraintStart_toStartOf="@+id/btn_CalculateBmi"
+        app:layout_constraintTop_toBottomOf="@+id/btn_CalculateBmi" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
