@@ -39,9 +39,19 @@ class MainActivity : AppCompatActivity() {
 
             Log.d("bmi", bmi.toString())
 
+            //使用 Bundle 類別一次傳送多筆資料
+            val bundle = Bundle()
             Intent(this, ResultActivity:: class.java).apply {
+                bundle.putFloat("BMI_EXTRA", bmi)
+                bundle.putString("TEST_EXTRA", "Testing")
+                putExtras(bundle)
+
+                startActivity(this)
+            }
+
+           /* Intent(this, ResultActivity:: class.java).apply {
                 putExtra("BMI_EXTRA", bmi)
-                startActivity(this) }
+                startActivity(this) }*/
 
           /*  Toast.makeText(this, bmi.toString(),Toast.LENGTH_SHORT).show()
             AlertDialog.Builder(this)
