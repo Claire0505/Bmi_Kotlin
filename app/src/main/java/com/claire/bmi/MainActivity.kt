@@ -1,5 +1,6 @@
 package com.claire.bmi
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -37,14 +38,18 @@ class MainActivity : AppCompatActivity() {
             val bmi = weight / (height * height)
 
             Log.d("bmi", bmi.toString())
-            Toast.makeText(this, bmi.toString(),Toast.LENGTH_SHORT).show()
 
+            Intent(this, ResultActivity:: class.java).apply {
+                putExtra("BMI_EXTRA", bmi)
+                startActivity(this) }
+
+          /*  Toast.makeText(this, bmi.toString(),Toast.LENGTH_SHORT).show()
             AlertDialog.Builder(this)
                 .setTitle("Your BMI")
                 .setMessage(bmi.toString())
                 .setPositiveButton("Ok", null)
                 .setNegativeButton("Cancel",  null)
-                .show()
+                .show()*/
         }
 
     }
